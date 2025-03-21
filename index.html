@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUPERION</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color:gray;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color:grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));;
+            color: background-attachment: fixed;;
+            paddings 20px;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        .info-box {
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .info-box p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .info-box .label {
+            font-weight: bold;
+            color: #4c68d7;
+        }
+        .info-box .value {
+            color: cornflowerblue;
+            font-size: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 10px;
+            background-color:black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>SUPERION</h1>
+        <p>Bots para instagram</p>
+    </header>
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Compra tu Bot</h1>
+        <p>Realiza tu compra y recibirás el bot dentro de las 24hs.</p>
+        
+        <form id="purchaseForm">
+            <div class="form-group">
+                <label for="name">Usuario</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Cantidad</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            
+            <input type="submit" value="Confirmar Compra">
+        </form>
+
+        <div id="successMessage" class="success-message" style="display: none;">
+            ¡Compra realizada con éxito! Te redirigiremos a WhatsApp para confirmar tu pedido.
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("purchaseForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Obtener datos del formulario
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var product = document.getElementById("product").value;
+
+            // Crear el mensaje para WhatsApp
+            var message = `Hola, me gustaría comprar el producto: ${product}. \nNombre: ${name} \nCorreo: ${email} \nTeléfono: ${phone}`;
+
+            // Número de WhatsApp al que se enviará el mensaje (debes reemplazarlo con tu propio número)
+            var whatsappNumber = "54936490642"; // Pon tu número de WhatsApp aquí (sin el +)
+
+            // Redirigir a WhatsApp con el mensaje
+            var whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+            // Mostrar mensaje de éxito
+            document.getElementById("successMessage").style.display = "block";
+
+            // Redirigir al enlace de WhatsApp después de 2 segundos
+            setTimeout(function() {
+                window.location.href = whatsappURL;
+            }, 2000);
+        });
+    </script></div>
+
+<!-- Pie de página -->
+<footer>
+    <p>&copy; 2025 -Superion| Todos los derechos reservados</p>
+</footer>
+
+
+
+
+</body>
+</html>
